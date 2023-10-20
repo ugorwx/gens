@@ -1,0 +1,15 @@
+{
+  "name": "Telegram String",
+  "stack": "container",
+  "env": {
+    "BOT_TOKEN": {
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}

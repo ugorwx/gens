@@ -1,0 +1,4 @@
+telethon==1.32.1
+pyrogram==2.0.106
+tgcrypto==1.2.5
+pyromod==3.1.6
