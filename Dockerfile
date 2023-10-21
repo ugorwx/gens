@@ -10,4 +10,4 @@ ARG PIP_ROOT_USER_ACTION=ignore
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "genStr.py"]
+CMD ["python", "main.py"]
