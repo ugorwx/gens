@@ -1,9 +1,8 @@
-import configparser
+from configparser import ConfigParser
 
 from pyrogram import Client
-from pyromod import listen
 
-config = configparser.ConfigParser()
+config = ConfigParser()
 config.read("config.ini")
 
 api_id = config.get("api", "id")
