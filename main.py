@@ -10,7 +10,7 @@ from pyrogram.errors import (
     PhoneCodeInvalid,
     PhoneCodeExpired,
     SessionPasswordNeeded,
-    BadRequest
+    PasswordHashInvalid
 )
 
 from bot import Bot, api_id, api_hash
@@ -115,7 +115,7 @@ async def _gens(bot: Bot, msg: Message):
             return await client.disconnect()
         try:
             await client.check_password(new_code)
-        except BadRequest:
+        except PasswordHashInvalid:
             await msg.reply(
                 "Password invalid!"
                 "\n\nPress /start to create again."
