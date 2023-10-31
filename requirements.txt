@@ -1,3 +1,4 @@
 pyrogram
 pyromod
 TgCrypto
+telethon
