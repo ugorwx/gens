@@ -37,6 +37,7 @@ bot = Bot()
 async def start(_, msg: Message):
     button = ikb([
         [("Pyrogram", "pyrogram"), ("Telethon", "telethon")],
+        [("Source Code", "https://github.com/ugorwx/gens", "url")]
     ])
     await msg.reply_photo(photo="./photo.png", reply_markup=button)
 

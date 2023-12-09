@@ -1,0 +1,25 @@
+name: Test Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          repository: ugorwx/gens
+      - name: Install Dependencies
+        run: |
+          pip install telethon pyrogram tgcrypto pyromod
+      - name: Run Client
+        run: |
+          python main.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}

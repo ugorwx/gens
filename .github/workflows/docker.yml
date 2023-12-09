@@ -1,0 +1,24 @@
+name: Build and Push to Docker Repository
+
+on:
+  workflow_dispatch:  
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Hub
+      run: docker login -u ugorwx -p ${{ secrets.DOCKER_TOKEN }}
+
+    - name: Build Image
+      run: |
+        docker build -t gens:tmp .
+        docker tag gens:tmp ugorwx/gens:latest
+
+    - name: Push Image
+      run: |
+        docker push ugorwx/gens:latest
