@@ -1,9 +1,0 @@
-{
-  "name": "Telegram String",
-  "stack": "container",
-  "env": {
-    "BOT_TOKEN": {
-      "required": true
-    }
-  }
-}

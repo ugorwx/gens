@@ -1,11 +1,11 @@
-from os import environ
+from os import getenv
 
 from pyrogram import Client
 
 
 api_id = 2040
 api_hash = "b18441a1ff607e10a989891a5462e627"
-bot_token = environ.get("BOT_TOKEN", "")
+bot_token = getenv("BOT_TOKEN")
 
 
 class Bot(Client):
